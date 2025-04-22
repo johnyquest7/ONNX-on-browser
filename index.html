@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browser Chatbot</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>In-Browser Chatbot with Transformers.js</h1>
+
+    <div class="model-loader">
+        <label for="model-name">Hugging Face Model:</label>
+        <input type="text" id="model-name" value="HuggingFaceTB/SmolLM2-1.7B-Instruct" placeholder="e.g., HuggingFaceTB/SmolLM-1.7B-Instruct">
+        <button id="load-model-btn">Load Model</button>
+        <p class="status" id="status">Status: Ready. Enter model name and click Load.</p>
+        <p class="note">
+            Note: Requires a browser supporting WebGPU (e.g., recent Chrome/Edge).
+            Loading large models can take time and significant memory/GPU resources.
+            Ensure the model is compatible with `transformers.js` text-generation (usually Instruct/Chat fine-tuned models).
+            Using quantized models (like q4f16) is recommended for browsers.
+        </p>
+    </div>
+
+    <div class="chat-container">
+        <div id="chat-history">
+            <!-- Chat messages will appear here -->
+             <div class="message system"><span>System:</span> Model loaded. You can start chatting.</div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-message" placeholder="Type your message..." disabled>
+            <button id="send-btn" disabled>Send</button>
+        </div>
+    </div>
+
+    <!-- Import Transformers.js -->
+    <script type="module" src="script.js"></script>
+</body>
+</html>
