@@ -190,7 +190,7 @@ async function loadModel() {
 
     try {
         generator = await pipeline("text-generation", modelName, {
-            dtype: "q4f16", device: "webgpu", progress_callback: handleProgress,
+            dtype: "int8", device: "webgpu", progress_callback: handleProgress,
         });
 
         if (!generator || !generator.tokenizer) {
