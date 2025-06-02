@@ -1,5 +1,5 @@
 // Import the necessary components from Transformers.js
-import { pipeline, TextStreamer } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.5.0";
+import { pipeline, TextStreamer } from "https://cdn.jsdelivr.net/npm/@huggingface/transformers@3.1";
 
 // --- DOM Elements ---
 // (Keep DOM element selectors as they were)
